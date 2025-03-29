@@ -26,7 +26,7 @@ const myCustomFilterFn: FilterFn<Payment> = (
     row: Row<Payment>,
     columnId: string,
     filterValue: string,
-    addMeta: (meta: any) => void
+    // addMeta: (meta: any) => void
 ) => {
     filterValue = filterValue.toLowerCase();
 
@@ -109,10 +109,10 @@ export const columns: ColumnDef<Payment>[] = [
                     processing: "info",
                     success: "success",
                     failed: "destructive",
-                }[status] ?? ("default" as any);
+                }[status] ?? ("default");
 
             return (
-                <Badge variant={variant} capitalize>
+                <Badge variant={variant as "default"} capitalize>
                     {status}
                 </Badge>
             );
